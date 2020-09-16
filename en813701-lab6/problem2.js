@@ -15,7 +15,6 @@ while (true){
         continue ;
     }
 }
-    
 function readInput(list){
     list = readInput(countVar);
     alert("For the list"+list);
