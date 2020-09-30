@@ -1,46 +1,41 @@
 let countVar = [];
-checkVarPos:
-while (true){
-    let n = prompt('Enter an positive integer(a negative integer to quit):');
-    let number = parseInt(n);
-    if(number>0){
-        countVar.push(number);
-        continue ;
-    }
-    else if(number<0){
-        
-        break;
-    }
-    else{
-        continue ;
+
+function readInput(){ 
+    let i = prompt("Enter an integer (a nagative integer to quit): ");
+    number = Number(i);
+    if (Number.isInteger(number)) {
+        if (number > 0){
+            countVar.push(number)
+            return number,countVar;
+        }else{
+            return number,countVar;
+        }
+    }else{
+
+        return number,countVar;
     }
 }
-function readInput(list){
-    list = readInput(countVar);
-    alert("For the list"+list);
+
+function displayStats(number){
+    let sum = countVar.reduce(function(a, b){
+        return a + b;
+    }, 0);
+
+    let avg = (sum/ countVar.length).toFixed(2);
+    return alert("For the list  "+countVar +", the average is "+ avg +  ", the minumun is "+Math.min.apply(Math,countVar)+ ", the maxinum is " + Math.max.apply(Math,countVar)) ;
+}
+
+outer: while (true) {
+    readInput();
+    list = readInput;
+    if (number < 0) {
+       (countVar == 0?  alert("For the list that is empty, the average is 0, the minimun is 0, and the maxinum is 0"): displayStats(list));
+    }else if (number >0){
+        continue;
     
+    }else{
+        continue;
+    }
+    
+break outer;
 }
-
-function displayStat(y){
-    alert()
-   
-}
-
-/*function avg(countVar){
-    let avg = (countVar/countVar.length)*countVar.length;
-    alert(avg);
-}
-
-function minVar(countVar){
-    Math.min(countVar);
-    alert(minVar(countVar));
-}
-
-function maxVar(countVar){
-    Math.max(countVar);
-    alert(maxVar(countVar));
-}
-*/
-readInput(countVar);
-displayStat(countVar);
-
